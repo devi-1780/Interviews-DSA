@@ -24,3 +24,8 @@ let checkEligible = (age) => {
 let age = 22;
 let isEligible = checkEligible(age);
 console.log(isEligible);
+
+let isEvenOrOdd = function (num) {
+  return num % 2 === 0 ? "Even" : "Odd";
+};
+console.log(isEvenOrOdd(10));
