@@ -29,3 +29,40 @@ let isEvenOrOdd = function (num) {
   return num % 2 === 0 ? "Even" : "Odd";
 };
 console.log(isEvenOrOdd(10));
+
+function printAllEvenNumbers(arr) {
+  let res = arr.filter((num) => num % 2 === 0);
+  return res.join(" ");
+}
+
+let arr = [10, 3, 5, 2, 7, 6, 9];
+let evenNumberArr = printAllEvenNumbers(arr);
+console.log(evenNumberArr);
+
+function countNegatives(arr) {
+  if (arr.length < 0) return [];
+  let count = 0;
+  for (let num of arr) {
+    if (num < 0) {
+      count++;
+    }
+  }
+  return count;
+}
+
+let negativeCount = countNegatives([2, -6, 4, 8, 1, -9]);
+console.log(negativeCount);
+
+function findSmallestNum(arr) {
+  if (arr.length < 0) return null;
+  let smallest = Infinity;
+  for (let num of arr) {
+    if (num < smallest) {
+      smallest = num;
+    }
+  }
+  return smallest;
+}
+
+let smallest = findSmallestNum([2, 3, -1, 5, 6]);
+console.log(smallest);
