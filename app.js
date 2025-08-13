@@ -115,7 +115,8 @@ let num = -256;
 let numberOfDigits = countDigits(num);
 console.log(numberOfDigits);
 
-//Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+//Write a function isPalindrome(x) that takes an integer x and
+//  returns true if it reads the same backward and forward; otherwise false.
 function isPalindrome(n) {
   if (n < 0) return false;
   let nCopy = n;
@@ -130,3 +131,23 @@ function isPalindrome(n) {
 }
 let isPalindromeNum = isPalindrome(121);
 console.log(isPalindromeNum);
+
+//Write a function reverse(x) that takes a 32-bit signed integer
+//  and returns its digits reversed. If the reversed value overflows
+// the 32-bit signed integer range, return 0.
+
+function reverseInteger(n) {
+  let nCopy = n;
+  n = Math.abs(n);
+  let rev = 0;
+
+  while (n > 0) {
+    let last = n % 10;
+    rev = 10 * rev + last;
+    n = Math.floor(n / 10);
+  }
+  let limit = 2 ** 31;
+  if (rev > limit - 1) return 0;
+  return nCopy < 0 ? -rev : rev;
+}
+console.log(reverseInteger(-256));
