@@ -66,3 +66,17 @@ function findSmallestNum(arr) {
 
 let smallest = findSmallestNum([2, 3, -1, 5, 6]);
 console.log(smallest);
+
+function findLargestNum(arr) {
+  if (arr.length < 0) return null;
+  let largest = -Infinity;
+  for (let num of arr) {
+    if (num > largest) {
+      largest = num;
+    }
+  }
+  return largest;
+}
+
+let largest = findLargestNum([2, 3, -1, 5, 6]);
+console.log(largest);
