@@ -80,3 +80,22 @@ function findLargestNum(arr) {
 
 let largest = findLargestNum([2, 3, -1, 5, 6]);
 console.log(largest);
+
+function secondLargestNumber(arr) {
+  if (arr.length < 2) return null;
+
+  let firstLargest = -Infinity;
+  let secondLargest = -Infinity;
+  for (let num of arr) {
+    if (num > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = num;
+    } else if (num > secondLargest && num != firstLargest) {
+      secondLargest = num;
+    }
+  }
+  return secondLargest;
+}
+
+let secondLargest = secondLargestNumber([20, 30, 20, 50, 30]);
+console.log(secondLargest);
