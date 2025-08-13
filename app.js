@@ -114,3 +114,19 @@ function countDigits(n) {
 let num = -256;
 let numberOfDigits = countDigits(num);
 console.log(numberOfDigits);
+
+//Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
+function isPalindrome(n) {
+  if (n < 0) return false;
+  let nCopy = n;
+  let rev = 0;
+
+  while (n > 0) {
+    let rem = n % 10;
+    rev = 10 * rev + rem;
+    n = Math.floor(n / 10);
+  }
+  return nCopy === rev;
+}
+let isPalindromeNum = isPalindrome(121);
+console.log(isPalindromeNum);
