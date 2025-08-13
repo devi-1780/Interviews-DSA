@@ -15,3 +15,12 @@ function findSquare(num) {
 
 let square = findSquare(4);
 console.log("Square of the given number is " + square);
+
+let checkEligible = (age) => {
+  let res = age >= 18 ? true : false;
+  return res;
+};
+
+let age = 22;
+let isEligible = checkEligible(age);
+console.log(isEligible);
